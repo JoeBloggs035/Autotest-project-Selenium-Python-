@@ -9,6 +9,11 @@ class MainPage(BasePage):
     def go_to_login_page(self):
         login_link = self.browser.find_element(*MainPageLocators.LOGIN_LINK)
         login_link.click()
+
+        # добавим обработку Alert, вдруг его добавят разработчики!
+        #alert = self.browser.switch_to.alert
+        #alert.accept()
+
         # 1-й способ реализации перехода между страницами: возвращать нужный Page Obgect
         # return LoginPage(browser=self.browser, url=self.browser.current_url)
         # 2-й способ без return
